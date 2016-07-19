@@ -1,0 +1,47 @@
+{
+  "name": "map-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yxfanxiao/map-box.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yxfanxiao/map-box/issues"
+  },
+  "homepage": "https://github.com/yxfanxiao/map-box#readme",
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-ui5": "^6",
+    "css-loader": "^0.23.1",
+    "del": "^2.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.5",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-ui5-lib": "^1.0.0",
+    "gulp-watch": "^4.3.6",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "rimraf": "^2.5.2",
+    "run-sequence": "^1.1.5",
+    "style-loader": "^0.13.1",
+    "ui5-loader": "^1.0.3",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
