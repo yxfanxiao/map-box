@@ -4,6 +4,5 @@
         "ui5"
     ],
     "plugins": [
-        "transform-runtime"
     ]
 }
