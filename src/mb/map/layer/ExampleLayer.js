@@ -1,5 +1,7 @@
 import Layer from "sap/a/map/layer/Layer";
 
+import Util from "gd/util/gis";
+
 export default class ExampleLayer extends Layer
 {
     metadata = {
@@ -37,61 +39,20 @@ export default class ExampleLayer extends Layer
         this._updateEndMarker();
     }
 
-    drawRoute(geoJSON)
+    drawRoute(route)
     {
         this.routeGroup.clearLayers();
-
-        // geoJSON.steps.forEach(d => {
-        //     const start_location_84 = gcj02towgs84(d.start_location.lng, d.start_location.lat);
-        //     const end_location_84 = gcj02towgs84(d.end_location.lng, d.end_location.lat);
-        //     const polyLine = L.polyline([
-        //         [ start_location_84[1], start_location_84[0] ],
-        //         [ end_location_84[1], end_location_84[0] ]
-        //     ]);
-        //     this.routeGroup.addLayer(polyLine);
-        // });
-
-        const m = [];
-        const steps = geoJSON.steps;
-        steps.forEach((step, i) => {
-            m.push([]);
-            step.path.forEach((p, j) => {
-                const point = gcj02towgs84(p.lng, p.lat);
-                m[i].push([
-                    point[1], point[0]
-                ]);
+        const r = route.steps.map(step => {
+            return step.path.map(p => {
+                return Util.gcj02towgs84(p);
             });
         });
-        const multiPolyLine = L.multiPolyline(m);
-        console.log(m);
+        const multiPolyLine = L.multiPolyline(r);
         this.routeGroup.addLayer(multiPolyLine);
 
 
     }
 
-    // [
-    //     [
-    //         [], [], []
-    //     ],
-    //     [
-    //         [], [], [], []
-    //     ]
-    // ]
-
-    // drawRoute(geoJSON)
-    // {
-    //     this.routeGroup.clearLayers();
-    //
-    //     geoJSON.steps.forEach(d => {
-    //         const start_location_84 = gcj02towgs84(d.start_location.lng, d.start_location.lat);
-    //         const end_location_84 = gcj02towgs84(d.end_location.lng, d.end_location.lat);
-    //         const polyLine = L.polyline([
-    //             [ start_location_84[1], start_location_84[0] ],
-    //             [ end_location_84[1], end_location_84[0] ]
-    //         ]);
-    //         this.routeGroup.addLayer(polyLine);
-    //     });
-    // }
 
     getBounds()
     {

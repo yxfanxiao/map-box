@@ -19,11 +19,12 @@
             }
         });
         applicatioonController.getView().placeAt(document.body);
-
-        AMap.service([ "AMap.Driving" ], () => {
-            driving = new AMap.Driving();
-            applicatioonController.run();
-        });
+        applicatioonController.run();
+        
+        // AMap.service([ "AMap.Driving" ], () => {
+        //     driving = new AMap.Driving();
+        //     applicatioonController.run();
+        // });
     });
 </script>
 </body>
