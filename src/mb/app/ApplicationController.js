@@ -13,7 +13,7 @@ export default class ApplicationController extends AdaptiveApplicationController
     {
         this.view.mapView.searchRoute(
             [ 31.9790247, 118.7548884 ],
-            [ 32.04, 118.77 ]
+            [ 32.04389, 118.77881 ]
         )
     }
 }

@@ -27,20 +27,19 @@ export default class MapView extends AdaptiveMapView
         const start_mars_location = wgs84togcj02(startLocation[1], startLocation[0]);
         const end_mars_location = wgs84togcj02(endLocation[1], endLocation[0]);
         driving.search(start_mars_location, end_mars_location, (status, result) => {
-            if (status === "complete")
+            console.log(result);
+            if (status === "complete" && result.info === "OK")
             {
                 this.exampleLayer.applySettings({
                     startLocation,
                     endLocation
                 });
                 const routes = result.routes[0];
+                console.log(routes);
                 this.exampleLayer.drawRoute(routes);
                 this.exampleLayer.fitBounds();
             }
         });
-
-
-
 
 
         // return new Promise((resove, reject) => {
