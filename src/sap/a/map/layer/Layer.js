@@ -10,7 +10,7 @@ export default class Layer extends ManagedObject
 
     init()
     {
-        this.container = L.layerGroup();
+        this.container = L.featureGroup();
     }
 
     afterInit()
